@@ -1,9 +1,13 @@
+import traceback
+
 def demo_error_handling():
     errored = False
     try:
         number1 = int(input("Enter a number: "))
         number2 = int(input("Enter another number: "))
         result = number1 // number2
+        if result == 0:
+            raise ArithmeticError("Second number should be smaller than first number")
     except ValueError:
         print("You got to enter a number!")
         errored = True
@@ -19,7 +23,11 @@ def demo_error_handling():
             print("Great job!!")
 
 def main():
-    demo_error_handling()
+    try:
+        demo_error_handling()
+    except ArithmeticError as ae:
+        print(ae)
+        traceback.print_exc()
 
 
 if __name__ == "__main__":

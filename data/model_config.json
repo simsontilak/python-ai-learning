@@ -1,0 +1,9 @@
+{
+    "layers": [
+        64,
+        32,
+        10
+    ],
+    "optimizer": "adam",
+    "epochs:": 20
+}
